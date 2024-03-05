@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-xxl py-5">
+    <div class="container py-5">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-secondary text-uppercase">Our Services</h6>
+            <h1 class="mb-5">Samalyo'tlar</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item p-4">
+                    <div class="overflow-hidden mb-4">
+                        <img class="img-fluid" src="{% static 'student/img/U.avif' %}" alt="">
+                    </div>
+                    <h4 class="mb-3">Uzb Havo yo’llari</h4>
+                    <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                    <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item p-4">
+                    <div class="overflow-hidden mb-4">
+                        <img class="img-fluid" src="{% static 'student/img/emirates.jpg' %}" alt="">
+                    </div>
+                    <h4 class="mb-3">Emirates </h4>
+                    <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                    <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="service-item p-4">
+                    <div class="overflow-hidden mb-4">
+                        <img class="img-fluid" src="{% static 'student/img/asiana.jpg' %}" alt="">
+                    </div>
+                    <h4 class="mb-3">Asiana Airways </h4>
+                    <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
+                    <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="container-xxl py-5">
+    <div class="container py-5">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-secondary text-uppercase">Sayyohlik agentligi</h6>
+            <h1 class="mb-5">Tashrif buyrishingiz mumkin bo'lgan shaharlar</h1>
+        </div>
+        <div class="row g-4">
+
+            {% for shahar in shaharlar %}
+                <div class="col mb-5">
+                    <div class="card h-100">
+                    <!-- Product image-->
+                        <img class="card-img-top" src="{{shahar.image.url}}" style="height: 330px;width: 250px;" alt="rasm bor" />
+                    <!-- Product details-->
+                         <div class="card-body p-4">
+                             <div class="text-center">
+                            <!-- Product name-->
+                                <h5 class="fw-bolder">{{shahar.name}} </h5>
+                            <!-- Product price-->
+                           
+                            </div>
+                        </div>
+                    <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Malumotlar</a></div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
